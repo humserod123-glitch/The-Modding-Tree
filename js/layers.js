@@ -27,9 +27,12 @@ addLayer("p", {
     layerShown(){return true},
         upgrades: {        11: {    title: "Honey",
     description: "Double your point gain.",
-    cost: new Decimal(2), 12: {    title: "Badger",
+    cost: new Decimal(2),
+    }, 
+        12: {    title: "Badger",
     description: "HB is now useful.",
-    cost: new Decimal(5),    effect() {
+    cost: new Decimal(5),
+        effect() {
         return player[this.layer].points.add(1).pow(0.5)
     },
     effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
